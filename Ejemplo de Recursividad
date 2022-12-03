@@ -1,0 +1,26 @@
+//Funciones recursivas, function que se llama a sí misma, ejemplo es el que haga un factorial de un número
+
+#include <stdio.h>
+
+double factorial(double n);
+int main() {
+  int numero;
+  printf("Ingrese el numero a factorizar (Solo positivos): ");
+  scanf("%d", &numero );
+  printf("EL factorial de %d es = %lg", numero, factorial(numero));
+  return 0;
+}
+double factorial(double n) {
+
+    if(n < 0){ //Anti Burros
+        printf("El numero debe ser positivo\n");
+        return 0;
+    }
+    else if (n == 0){ //caso base
+        return 1;
+    }
+    else{ //caso recursivo
+        int a = n * factorial(n - 1);
+        return a;
+    }
+}
